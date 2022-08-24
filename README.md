@@ -3,8 +3,8 @@
 
 There is an outburst of abusing ScriptableObject with wrong, wrong way. Including using it as Event Broker or Reactive variable. DO NOT DO THIS. Don't even think about it. I've collected many reason to stop this madness for the sake of the community.
 
-## What is it?
-The so-called ScriptableObject Architecture started spreading from some Cursed Sessions of [2016 Unite](https://www.youtube.com/watch?v=6vmRwLYWNRo) and [2017 Unite](https://www.youtube.com/watch?v=raQ3iHhE_Kk). Now Unity sadly has dedicated page for [How To](https://unity.com/how-to/architect-game-code-scriptable-objects) about this. But using ScriptableObject in this way will bring your doom. We have all the reasons.
+## What is ScriptableObject Architecture?
+The so-called ScriptableObject Architecture started spreading from some Cursed Sessions of [2016 Unite](https://www.youtube.com/watch?v=6vmRwLYWNRo) and [2017 Unite](https://www.youtube.com/watch?v=raQ3iHhE_Kk). Now Unity sadly has dedicated page for [How To](https://unity.com/how-to/architect-game-code-scriptable-objects) about this. But using ScriptableObject in this way will bring your doom. Here we have the reasons to not to use it.
 
 ## Reason 1. They are mean to be used as Data Asset
 ScriptableObject is meant to be used as immutable data asset. It's not Unreal Blueprint. Many Unity docs says it's good for data asset and data asset only. If someone trying to set a dynamic string to TextAsset in runtime, that would seem nuts. Same applies to setting mutable value into ScriptableObject in runtime!
@@ -13,7 +13,7 @@ ScriptableObject is meant to be used as immutable data asset. It's not Unreal Bl
 You know we can do it all that without SO and simpler. There is no single thing ScriptableObject can do but C# object can't. In contrast, there is tons of things that ScriptableObject can't, because of restriction and it's nature. All the patterns, Observer, Strategy, Factory, Command, they can all be done by simple C# objects. You don't need to choose unnecessarily complex way.
 
 ## Reason 3. Don't bind yourself with Unity Inspector
-Using ScriptableObject forces you and your team bound to Unity's GUI. Does it look cool to set variable through Editor? Okay to see through tutorials. Not when you have to search and roaming to find a correct variable. Even worse that it is not anywhere near flexible. Just using proper Visual Scripting tool will be ten times productive.
+Using ScriptableObject forces you and your team bound to Unity's GUI. Does it look cool to set variable through Editor? Okay to see through tutorials. Not until you have to search and roaming to find a correct variable. Coupling your code with assets will make problems that hard to find. Even worse that it is not anywhere near flexible. Just using proper Visual Scripting tool will be ten times productive.
 
 ## Reason 4. It makes your project Unmaintainable
 You cannot even tell what is the problem by looking at your code. You gotta debug your project with GUI. You have to make each the variable to link as an asset, per stat, per character. What are you going to do when you have to refactor your data structure? You cannot possibliy imagine managing tons of ScriptableObject within maze of Directory. Is that really what you want?
