@@ -21,7 +21,7 @@ You cannot even tell what the problem is by looking at your code. You gotta debu
 ## Reason 5. It lacks of Expandability
 You can make a few variables that you can manage, but as the project expands, you will need lots of variables. Many of them have to be created at runtime. Since you cannot statically set it up as an asset, the whole purpose of SO architecture will be ruined. And you will realize it was dumb decision by the time you have to "Instantiate" ScriptableObject. It will be a long, painful journey to go back.
 
-## Reason 6. There is ton of better Alternatives
+## Reason 6. There are ton of better Alternatives
 What do you need? Do you need a reactive system? There is [UniRx](https://github.com/neuecc/UniRx), [UniTask](https://github.com/Cysharp/UniTask). Do you need Dependency Injection? There is [Zenject](https://github.com/modesttree/Zenject). Do you want to Visual Script? Use [Bolt](https://assetstore.unity.com/packages/tools/visual-scripting/bolt-163802)!
 
 ## Reason 7. You cannot turn off Domain/Scene Reload
