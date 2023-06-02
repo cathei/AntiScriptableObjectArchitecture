@@ -6,7 +6,7 @@ There is an outburst of abusing ScriptableObject in the wrong, wrong way. Includ
 ## What is ScriptableObject Architecture?
 The so-called ScriptableObject Architecture started spreading from some cursed Sessions of [2016 Unite](https://www.youtube.com/watch?v=6vmRwLYWNRo) and [2017 Unite](https://www.youtube.com/watch?v=raQ3iHhE_Kk). Now Unity sadly has a dedicated page on [How To](https://unity.com/how-to/architect-game-code-scriptable-objects) about this. But using ScriptableObject this way will bring your doom. Let's get to the reasons for not using it.
 
-## Reason 1. They are mean to be used as Data Asset
+## Reason 1. They are meant to be used as Data Asset
 ScriptableObject is meant to be used as immutable data asset. It's not Unreal Blueprint. Many Unity docs say it's good as data asset and data asset only. If someone is trying to set a dynamic string to TextAsset in runtime, that would seem nuts. Same applies to setting mutable values into ScriptableObject in runtime!
 
 ## Reason 2. You can do it with any C# Object
